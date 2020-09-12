@@ -16,6 +16,7 @@ spec:
       creationTimestamp: null
       labels:
         app: v1-nginx
+        myapp: web
     spec:
       containers:
       - image: nginx
@@ -36,6 +37,32 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: v1-nginx 
+    myapp: web
 status:
   loadBalancer: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: v2-apache
+  name: v2-apache
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: v2-apache
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: v2-apache
+        myapp: web
+    spec:
+      containers:
+      - image: httpd
+        name: httpd
+        resources: {}
+status: {}
