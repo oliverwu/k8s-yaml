@@ -36,6 +36,6 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    myapp: web
+    app: v1-nginx 
 status:
   loadBalancer: {}
