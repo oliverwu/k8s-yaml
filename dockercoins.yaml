@@ -156,5 +156,5 @@ spec:
         app: worker
     spec:
       containers:
-      - image: dockercoins/worker:v0.1
+      - image: dockercoins/worker:v0.2
         name: worker
