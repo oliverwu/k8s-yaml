@@ -21,4 +21,4 @@ spec:
           httpGet:
             path: /
             port: 80
-          initialDelaySconds: 10
+          initialDelaySeconds: 10
